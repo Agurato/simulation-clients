@@ -13,3 +13,8 @@ double Cashier::averageServiceTime(){
 int Cashier::nbClient(){
     return _nbClient;
 }
+
+
+Cashier::serve(Client){
+
+}
