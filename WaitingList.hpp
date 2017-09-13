@@ -1,13 +1,20 @@
 #ifndef __WAITINGLIST_HPP
 #define __WAITINGLIST_HPP
+#include <deque>
+#iniclude "Client.cpp"
+#include <iostream>
 
-public class WaitingList{
-    int maxLength();
-    int averageLength();
-    double averageWaitingTime();
-    void add(Client);
-    bool isEmpty();
-    void removeIt();
+
+class WaitingList{
+    protected:
+        deque clientList;
+    public:
+        int maxLength();
+        int averageLength();
+        double averageWaitingTime();
+        void add(Client);
+        bool isEmpty();
+        Client removeFirst();
 
 }
 

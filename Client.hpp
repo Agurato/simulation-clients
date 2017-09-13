@@ -3,8 +3,12 @@
 
 
 
-public class Client{
-    double arrivalTime();
+class Client{
+    protected:
+        double _arrivalTime;
+    public:
+        double arrivalTime();
+        Client (double);
 }
 
 #endif

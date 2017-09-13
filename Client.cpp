@@ -1,10 +1,8 @@
 #include "Client.hpp"
-#include <ctime>
 
-namespace std;
+using namespace std;
 
-Client::arrivalTime(){
-        time_t result = time(nullptr);
-        return asctime(localtime(&result));
-
+Client::Client(double arrivalTime){
+    _arrivalTime = arrivalTime;
 }
+
