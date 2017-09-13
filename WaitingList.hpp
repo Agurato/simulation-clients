@@ -1,13 +1,13 @@
 #ifndef __WAITINGLIST_HPP
 #define __WAITINGLIST_HPP
+
+#include <iostream>
 #include <deque>
 #include "Client.hpp"
-#include <iostream>
-
 
 class WaitingList{
     protected:
-        std::deque clientList;
+        std::deque<Client> clientList;
     public:
         int maxLength();
         int averageLength();

@@ -8,7 +8,7 @@ class Client{
         double _arrivalTime;
     public:
         double arrivalTime();
-        Client (double);
+        explicit Client (double);
 };
 
 #endif

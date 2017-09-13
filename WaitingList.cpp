@@ -2,9 +2,8 @@
 
 using namespace std;
 
-void WaitingList::addClient(Client c){
+void WaitingList::add(Client c){
     clientList.push_back(c);
-
 }
 
 Client WaitingList::removeFirst(){
