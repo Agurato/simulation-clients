@@ -8,7 +8,7 @@ class Cashier{
         double averageServiceTime();
         int nbClient();
         double occupationRate();
-        bool isFree();
+        bool isFree;
         void serve(Client);
         void wait();
         void bank(): Bank*;
