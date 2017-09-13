@@ -18,6 +18,6 @@ class Bank{
         int nbClients();
         void aFreeCashier();
         Bank(double, int, double*, double averageArrivalTime);
-}
+};
 
 #endif

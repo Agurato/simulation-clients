@@ -16,6 +16,6 @@ class WaitingList{
         bool isEmpty();
         Client removeFirst();
 
-}
+};
 
 #endif

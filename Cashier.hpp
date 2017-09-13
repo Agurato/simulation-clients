@@ -12,6 +12,6 @@ class Cashier{
         void wait();
         void bank(): Bank*;
         Cashier(double averageServiceTime);
-}
+};
 
 #endif

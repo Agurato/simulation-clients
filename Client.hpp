@@ -9,6 +9,6 @@ class Client{
     public:
         double arrivalTime();
         Client (double);
-}
+};
 
 #endif
