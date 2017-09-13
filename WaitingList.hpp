@@ -5,9 +5,9 @@ class WaitingList{
     int maxLength();
     int averageLength();
     double averaigeWaitingTime();
-    add(Client);
+    void add(Client);
     bool isEmpty();
-    removeIt();
+    void removeIt();
 
 }
 
