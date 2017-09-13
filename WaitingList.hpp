@@ -4,7 +4,7 @@
 public class WaitingList{
     int maxLength();
     int averageLength();
-    double averaigeWaitingTime();
+    double averageWaitingTime();
     void add(Client);
     bool isEmpty();
     void removeIt();
