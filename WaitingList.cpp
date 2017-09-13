@@ -7,7 +7,22 @@ namespace std;
 
 deque<int> myints;
 
-WaitingList::maxLength(){
+
+void WaitingList::maxLength(){
+if (myints.size > WaitingList::maxLength){
+        WaitingList::maxLength = myhints.size;
+    }
+return 0;
+}
+
+
+void WaitingList::isEmpty(){
+    if (myints.size() == 0){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 
@@ -21,14 +36,3 @@ cout << "2. size: " << myints.size() << '\n';
 
 myints.pop_back();
 cout << "3. size: " << myints.size() << '\n';
-
-return 0;
-}
-
-
-
-if (myints.size() == 0){
-        WaitingList::isEmpty == 0;
-    }else{
-        WaitingList::isEmpty == A;
-}
