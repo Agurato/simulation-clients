@@ -5,6 +5,11 @@
 class Bank{
     protected:
         double _averageArrivalTime;
+        double _expectedtime;
+        int _nbCashier;
+        double* averageServiceTimes;
+
+
     public:
         double expedtedTime();
         int nbCasher();
@@ -12,7 +17,7 @@ class Bank{
         double realDuration();
         int nbClients();
         void aFreeCashier();
-        Bank(double averageArrivalTime);
+        Bank(double, int, double*, double averageArrivalTime);
 }
 
 #endif

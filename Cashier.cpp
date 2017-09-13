@@ -5,7 +5,7 @@ Cashier::Cashier(double averageTime){
 
 }
 
-Cashier::averageServiceTime(){
+double Cashier::averageServiceTime(){
     return _averageServiceTime;
 
 }
