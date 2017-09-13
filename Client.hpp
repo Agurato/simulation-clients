@@ -4,7 +4,7 @@
 
 
 class Client{
-    double heureArrivée();
+    double arrivalTime();
 }
 
 #endif

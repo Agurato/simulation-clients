@@ -1,13 +1,13 @@
 #ifndef __CASHIER_HPP
 #define __CASHIER_HPP
-class Caissier{
-    double tempsMoyenService();
+class Cashier{
+    double averageServiceTime();
     int nbClient();
-    double tauxOccupation();
-    bool estLibre();
-    servir(Client);
-    attendre();
-    banque(): Banque*;
+    double occupationRate();
+    bool isFree();
+    void serve(Client);
+    void wait();
+    void bank(): Bank*;
 }
 
 #endif
