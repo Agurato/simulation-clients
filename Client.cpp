@@ -5,6 +5,6 @@ namespace std;
 
 Client::arrivalTime(){
         time_t result = time(nullptr);
-        asctime(localtime(&result));
+        return asctime(localtime(&result));
 
 }
