@@ -1,3 +1,4 @@
+#include <string>
 #include "Cashier.hpp"
 
 Cashier::Cashier(double averageTime){
@@ -15,6 +16,6 @@ int Cashier::nbClient(){
 }
 
 
-Cashier::serve(Client){
-
+Cashier::serve(&Client){
+    Client*;
 }
