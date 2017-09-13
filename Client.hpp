@@ -3,7 +3,7 @@
 
 
 
-class Client{
+public class Client{
     double arrivalTime();
 }
 

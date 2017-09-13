@@ -1,6 +1,6 @@
 #ifndef __CASHIER_HPP
 #define __CASHIER_HPP
-class Cashier{
+public class Cashier{
     double averageServiceTime();
     int nbClient();
     double occupationRate();

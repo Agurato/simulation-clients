@@ -2,7 +2,7 @@
 #define __BANK_HPP
 #include "Cashier.hpp"
 
-class Bank{
+public class Bank{
     double expedtedTime();
     int nbCasher();
     double averageTime();
