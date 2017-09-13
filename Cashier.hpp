@@ -3,6 +3,7 @@
 class Cashier{
     protected:
         double _averageServiceTime;
+        int _nbClient;
     public:
         double averageServiceTime();
         int nbClient();
