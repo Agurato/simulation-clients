@@ -3,8 +3,11 @@
 class Caissier{
     double tempsMoyenService();
     int nbClient();
-
-
+    double tauxOccupation();
+    bool estLibre();
+    servir(Client);
+    attendre();
+    banque(): Banque*;
 }
 
 #endif
