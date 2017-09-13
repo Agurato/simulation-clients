@@ -7,7 +7,7 @@
 
 class WaitingList{
     protected:
-        deque clientList;
+        std::deque clientList;
     public:
         int maxLength();
         int averageLength();
