@@ -6,8 +6,8 @@
 class ClientArrival: public Event {
 public:
     explicit ClientArrival(double);
-    void process();
-    bool operator<(const Event&) const;
+    void process() override;
+    // bool operator<(const Event&) const;
 };
 
 #endif

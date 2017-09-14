@@ -6,10 +6,10 @@ protected:
     double _time;
 public:
     explicit Event(double);
-    Event(const Event&);
-    ~Event();
+    // Event(const Event&);
+    // ~Event();
 
-    virtual void process() = 0;
+    virtual void process();
     double time() const;
     bool operator<(const Event&) const;
 };
