@@ -16,3 +16,15 @@ Client WaitingList::removeFirst(){
 bool WaitingList::isEmpty(){
     return clientList.empty();
 }
+
+void WaitingList::averageLength() {
+
+}
+
+void WaitingList::averageWaitingTime() {
+
+}
+
+void WaitingList::maxLength() {
+
+}

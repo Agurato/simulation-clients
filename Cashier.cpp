@@ -15,7 +15,11 @@ int Cashier::nbClient(){
     return _nbClient;
 }
 
+void Cashier::occupationRate() {
 
-Cashier::serve(&Client){
-    Client*;
+}
+
+
+void Cashier::serve(&Client){
+
 }
