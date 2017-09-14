@@ -1,13 +1,13 @@
 #include "Event.hpp"
 
-Event::Event(double time) {
-    _time = time;
-    _des = 0;
-}
+//Event::Event(double time) {
+//    _time = time;
+//    _bank = 0;
+//}
 
-Event::Event(double time, DES* des) {
+Event::Event(double time, Bank* bank) {
     _time = time;
-    _des = des;
+    _bank = bank;
 }
 
 // Event::Event(const Event& e) {

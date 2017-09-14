@@ -4,8 +4,6 @@
 #include <iostream>
 #include <set>
 
-#include "Event.hpp"
-
 using namespace std;
 
 class Event;

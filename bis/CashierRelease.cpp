@@ -1,6 +1,6 @@
 #include "CashierRelease.hpp"
 
-CashierRelease::CashierRelease(double t, Cashier ca, Client cl): Event(t), _cashier(ca), _client(cl) {}
+CashierRelease::CashierRelease(double t, Cashier ca, Client cl, Bank* b): Event(t, b), _cashier(ca), _client(cl) {}
 
 void CashierRelease::process() {
     // Delete client

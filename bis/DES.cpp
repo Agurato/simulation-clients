@@ -5,6 +5,7 @@ DES::DES(double start) {
 }
 
 DES::~DES() {
+    _events.clear();
 }
 
 void DES::run() {

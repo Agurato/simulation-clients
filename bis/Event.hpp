@@ -3,21 +3,16 @@
 
 #include <set>
 
-#include "DES.hpp"
-
 using namespace std;
 
-class DES;
+class Bank;
 
 class Event {
 protected:
-    DES* _des;
+    Bank* _bank;
     double _time;
 public:
-    explicit Event(double);
-    explicit Event(double, DES*);
-    // Event(const Event&);
-    // ~Event();
+    explicit Event(double, Bank*);
 
     virtual void process();
     double time() const;

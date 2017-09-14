@@ -8,9 +8,6 @@
 #include "DES.hpp"
 #include "WaitingList.hpp"
 
-class Cashier;
-class WaitingList;
-
 class Bank: public DES {
 protected:
     double _averageArrivalTime;
@@ -25,7 +22,7 @@ protected:
 
 public:
     Bank(double, double, int, double, double*);
-    ~Bank();
+    ~Bank() override;
 
     void run() override;
 

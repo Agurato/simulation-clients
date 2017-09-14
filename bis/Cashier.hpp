@@ -3,8 +3,6 @@
 
 #include "Client.hpp"
 
-class Client;
-
 class Cashier{
 protected:
     double _averageServiceTime;

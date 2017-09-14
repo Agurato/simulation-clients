@@ -19,7 +19,7 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
 
     // Create first arrival event
     // Bank *b = new Bank(start, expectedTime, cashierNb, averageArrivalTime, averageServiceTimes);
-    ClientArrival *ca = new ClientArrival(0.1);
+    ClientArrival *ca = new ClientArrival(0.1, this);
     addEvent(ca);
 }
 

@@ -7,11 +7,13 @@
 #include "Client.hpp"
 #include "Event.hpp"
 
+//class Bank;
+//class Event;
+
 class ClientArrival: public Event {
 public:
-    explicit ClientArrival(double);
+    explicit ClientArrival(double, Bank*);
     void process() override;
-    // bool operator<(const Event&) const;
 };
 
 #endif
