@@ -5,17 +5,21 @@ WaitingList::WaitingList() = default;
 WaitingList::~WaitingList() = default;
 
 void WaitingList::add(Client c){
-    clientList.push_back(c);
+    _clientList.push_back(c);
 }
 
 Client WaitingList::removeFirst(){
-    Client c = clientList.front();
-    clientList.pop_front();
+    Client c = _clientList.front();
+    _clientList.pop_front();
     return c;
 }
 
 bool WaitingList::isEmpty(){
-    return clientList.empty();
+    return _clientList.empty();
+}
+
+int WaitingList::size() {
+    return _clientList.size();
 }
 
 int WaitingList::maxLength() {

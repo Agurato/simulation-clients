@@ -5,6 +5,7 @@
 #include <set>
 #include <random>
 
+#include "Poisson.h"
 #include "Bank.hpp"
 #include "Event.hpp"
 

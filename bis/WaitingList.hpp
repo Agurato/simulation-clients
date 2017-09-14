@@ -9,7 +9,7 @@ class Client;
 
 class WaitingList{
 protected:
-    std::deque<Client> clientList;
+    std::deque<Client> _clientList;
 
 public:
     WaitingList();
@@ -17,6 +17,7 @@ public:
 
     void add(Client);
     bool isEmpty();
+    int size();
     Client removeFirst();
 
     int maxLength();

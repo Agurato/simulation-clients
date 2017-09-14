@@ -29,7 +29,9 @@ public:
     double averageArrivalTime();
     double expectedTime();
     int cashierNb();
-    Cashier freeCashier();
+
+    Cashier* freeCashier();
+    WaitingList* shortestQueue();
 
     double realDuration();
 };

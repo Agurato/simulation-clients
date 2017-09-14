@@ -1,5 +1,7 @@
 #include "Cashier.hpp"
 
+using namespace std;
+
 Cashier::Cashier() {
     _averageServiceTime = -1;
     _clientNb = 0;
@@ -30,8 +32,10 @@ bool Cashier::isFree() {
     return (_currentClient == 0);
 }
 
-void Cashier::serve(Client) {
-
+void Cashier::serve(Client* c) {
+    _currentClient = c;
+    cout << "Start serving client arrived at " << c->arrivalTime() << endl;
+    // Add event to stop serving the client
 }
 
 void Cashier::wait() {

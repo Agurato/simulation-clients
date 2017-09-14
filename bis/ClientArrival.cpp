@@ -10,15 +10,23 @@ void ClientArrival::process() {
     // Create client (using average time)
     cout << "Create client at time " << _time << endl;
 //    cout << "Average arrival time " << _bank->cashierNb() << endl;
-    // Client *client = new Client(_time, _bank);
-    
-    // If a cashier is free, use the first to serve the client
-    // Else, client joins the queue
+    Client *client = new Client(_time, _bank);
 
-    // Compute next arrival time = t
-    // If t < estimated_time, add client arrival event to event list
+    Cashier* cashier = _bank->freeCashier();
+    // If there isn't any free cashier, add client to the sortest queue
+    if(cashier == 0) {
+        WaitingList* wl = _bank->shortestQueue();
+        wl->add(*client);
+    }
+    // Else, have the cashier serve the client
+    else {
+        cashier->serve(client);
+        double serviceTime = Poisson::next(cashier->averageServiceTime());
+        cout << "Service time: " << serviceTime << endl;
+        double nextTime = _bank->time()+serviceTime;
+        if(nextTime < _bank->expectedTime()) {
+            ClientArrival *ca = new ClientArrival(nextTime, _bank);
+            _bank->addEvent(ca);
+        }
+    }
 }
-
-// bool Event::operator<(const Event& e) const {
-//     return (_time < e.time());
-// }

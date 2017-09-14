@@ -49,10 +49,26 @@ int Bank::cashierNb() {
     return _cashierNb;
 }
 
-// TODO : implement
-Cashier Bank::freeCashier() {
-    // Check all cashiers and see if 1 is free
-    return Cashier(2);
+Cashier* Bank::freeCashier() {
+    for(int i=0 ; i < _cashierNb ; i++) {
+        if(_cashiers[i].isFree()) {
+            return &(_cashiers[i]);
+        }
+    }
+
+    return 0;
+}
+
+WaitingList* Bank::shortestQueue() {
+    int minIndex = 0;
+    int min = _waitingLists[minIndex].size();
+    for(int i=1 ; i < _cashierNb ; i++) {
+        if(_waitingLists[i].size() < min) {
+            minIndex = i;
+            min = _waitingLists[i].size();
+        }
+    }
+    return &(_waitingLists[minIndex]);
 }
 
 // TODO : implement

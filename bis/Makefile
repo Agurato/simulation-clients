@@ -3,15 +3,15 @@
 CPP_FILES = $(wildcard *.cpp)
 OBJ = $(CPP_FILES:.cpp=.o)
 CC_FLAGS = -std=c++11
-LD_FLAGS = 
+LD_FLAGS = -Dsrandom=srand -Drandom=rand
 
 all: simulation
 
 simulation: $(OBJ)
-	c++ $(CC_FLAGS) $(OBJ) -o simulation.out
+	c++ $(CC_FLAGS) $(LD_FLAGS) $(OBJ) -o simulation.out
 
 %.o: %.cpp %.hpp
-	c++ $(CC_FLAGS) -c $< -o $@
+	c++ $(CC_FLAGS) $(LD_FLAGS) -c $< -o $@
 
 clean: clean_object
 	rm -rfv mk.tmp

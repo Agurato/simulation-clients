@@ -8,9 +8,9 @@ int main() {
     double averageArrivalTime = 8;
     double* averageServiceTimes = new double[cashierNb];
 
-    genRandomDoubles(averageArrivalTime-3, averageArrivalTime+3, &averageServiceTimes, cashierNb);
-    for(int i=0 ; i<cashierNb ; i++) {
-    }
+    Poisson::init();
+
+    genRandomDoubles(15, 15, &averageServiceTimes, cashierNb);
 
     Bank bank(0, expectedTime, cashierNb, averageArrivalTime, averageServiceTimes);
     bank.run();

@@ -1,6 +1,8 @@
 #ifndef __CASHIER_HPP
 #define __CASHIER_HPP
 
+#include <iostream>
+
 #include "Client.hpp"
 
 class Cashier{
@@ -18,7 +20,7 @@ public:
     int clientNb();
 
     bool isFree();
-    void serve(Client);
+    void serve(Client*);
     void wait();
 
     double occupationRate();

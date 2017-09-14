@@ -3,12 +3,10 @@
 
 #include <iostream>
 
+#include "Poisson.h"
 #include "Bank.hpp"
 #include "Client.hpp"
 #include "Event.hpp"
-
-//class Bank;
-//class Event;
 
 class ClientArrival: public Event {
 public:
