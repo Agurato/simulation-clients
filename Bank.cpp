@@ -10,3 +10,11 @@ Bank::Bank(double expectedTime, int nbCashier, double* averageServiceTimes ,doub
     _averageArrivalTime = averageArrivalTime;
 
 }
+
+int Bank::cashierNb() {
+    return _nbCashier;
+}
+
+double Bank::expectedTime() {
+    return _expectedTime;
+}
