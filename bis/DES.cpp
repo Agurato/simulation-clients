@@ -4,12 +4,14 @@ DES::DES(double start) {
     _time = start;
 }
 
-void DES::run() {
-
+DES::~DES() {
 }
 
-void DES::addEvent(const Event& e) {
-    _eventSet.insert(e);
+void DES::run() {
+}
+
+void DES::addEvent(Event* e) {
+    _events.insert(e);
 }
 
 double DES::time() {

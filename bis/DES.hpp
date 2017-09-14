@@ -3,18 +3,25 @@
 
 #include <iostream>
 #include <set>
+
 #include "Event.hpp"
 
 using namespace std;
 
+class Event;
+
 class DES {
 protected:
     double _time;
-    set<Event> _eventSet;
+
+    set<Event*> _events;
+    set<Event*>::iterator _eventIterator;
 public:
     explicit DES(double);
-    void run();
-    void addEvent(const Event&);
+    virtual ~DES();
+
+    virtual void run();
+    void addEvent(Event*);
     double time();
 };
 

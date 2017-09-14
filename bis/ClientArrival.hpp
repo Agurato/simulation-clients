@@ -1,6 +1,10 @@
 #ifndef __CLIENT_ARRIVAL_HPP
 #define __CLIENT_ARRIVAL_HPP
 
+#include <iostream>
+
+#include "Bank.hpp"
+#include "Client.hpp"
 #include "Event.hpp"
 
 class ClientArrival: public Event {

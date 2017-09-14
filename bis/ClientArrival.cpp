@@ -1,12 +1,15 @@
 #include "ClientArrival.hpp"
 
-#include <iostream>
+using namespace std;
 
-ClientArrival::ClientArrival(double t): Event(t) {}
+ClientArrival::ClientArrival(double t): Event(t) {
+    // _des = b;
+}
 
 void ClientArrival::process() {
-    std::cout << "process override ClientArrival" << std::endl;
     // Create client (using average time)
+    cout << "Create client at time " << _time << endl;
+    // Client *client = new Client(_time, _bank);
     
     // If a cashier is free, use the first to serve the client
     // Else, client joins the queue

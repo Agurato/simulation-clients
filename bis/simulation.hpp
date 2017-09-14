@@ -1,7 +1,14 @@
+#ifndef __SIMULATION_HPP
+#define __SIMULATION_HPP
+
 #include <iostream>
 #include <set>
+#include <random>
 
-#include "ClientArrival.hpp"
+#include "Bank.hpp"
 #include "Event.hpp"
 
-void displayEvents(std::set<Event*> events);
+void genRandomDoubles(double min, double max, double** arr, int arrSize);
+void displayEvents(std::set<Event*>);
+
+#endif

@@ -2,6 +2,12 @@
 
 Event::Event(double time) {
     _time = time;
+    _des = 0;
+}
+
+Event::Event(double time, DES* des) {
+    _time = time;
+    _des = des;
 }
 
 // Event::Event(const Event& e) {

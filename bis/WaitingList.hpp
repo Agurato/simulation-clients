@@ -5,6 +5,8 @@
 #include <deque>
 #include "Client.hpp"
 
+class Client;
+
 class WaitingList{
 protected:
     std::deque<Client> clientList;
