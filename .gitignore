@@ -33,3 +33,8 @@
 
 # Temporary Makefile
 mk.tmp
+
+# Using JetBrains IDE
+cmake-build-debug/
+CMakeLists.txt
+.idea/
