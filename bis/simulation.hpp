@@ -10,6 +10,6 @@
 #include "Event.hpp"
 
 void genRandomDoubles(double min, double max, double** arr, int arrSize);
-void displayEvents(std::set<Event*>);
+void displayStats(Bank);
 
 #endif

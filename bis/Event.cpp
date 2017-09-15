@@ -2,27 +2,22 @@
 
 #include <iostream>
 
+/* Constructor of Event with params:
+- time      time of the execution of the event
+- bank      pointer to the bank
+*/
 Event::Event(double time, Bank* bank) {
     _time = time;
     _bank = bank;
 }
 
-// Event::Event(const Event& e) {
-//     _time = e.time();
-// }
-
-// Event::~Event() = default;
-
+/* Process of the event
+Overridden by ClientArrival & CashierRelease
+*/
 void Event::process() {
 }
 
+/* Returns the time of the event */
 double Event::time() const {
     return _time;
 }
-
-//bool Event::operator<(const Event& e) const {
-//    std::cout << (_time < e.time()) << std::endl;
-//    return (_time < e.time());
-//}
-
-
