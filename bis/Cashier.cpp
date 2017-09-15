@@ -40,7 +40,7 @@ void Cashier::serve(Client c) {
     _clientNb ++;
     _servingClient = true;
     _currentClient = c;
-    double eventTime = c.arrivalTime()+Poisson::next(_averageServiceTime);
+    double eventTime = _bank->time()+Poisson::next(_averageServiceTime);
     // Add event to stop serving the client
     _bank->addEvent(new CashierRelease(eventTime, this, _number, c, _bank));
 }

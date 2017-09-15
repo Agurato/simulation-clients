@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    double expectedTime = 1000;
+    double expectedTime = 500;
     int cashierNb = 3;
     double averageArrivalTime = 8;
     double* averageServiceTimes = new double[cashierNb];

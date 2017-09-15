@@ -30,7 +30,7 @@ Bank::~Bank() {
 }
 
 void Bank::run() {
-    for(_eventIterator = _events.begin() ; (_eventIterator != _events.end()) && (_time < _expectedTime) ; ++_eventIterator) {
+    for(_eventIterator = _events.begin() ; _eventIterator != _events.end() ; ++_eventIterator) {
         Event *e = *_eventIterator;
         _time = e->time();
         cout << _time << ":  \t";
@@ -76,7 +76,6 @@ WaitingList* Bank::shortestQueue() {
     return &(_waitingLists[minIndex]);
 }
 
-// TODO : implement
 double Bank::realDuration() {
-    return 0;
+    return _time;
 }
