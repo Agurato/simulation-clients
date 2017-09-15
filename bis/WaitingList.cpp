@@ -3,20 +3,30 @@
 /* Constructor with no params for the init of the array in Bank */
 WaitingList::WaitingList() {
     _number = -1;
+    _currClients = 0;
+    _maxClients = 0;
 }
 
 /* Constructor with the index in the array of waiting lists in Bank */
-WaitingList::WaitingList(int n): _number(n) {}
+WaitingList::WaitingList(int n): _number(n) {
+    _currClients = 0;
+    _maxClients = 0;
+}
 
 WaitingList::~WaitingList() = default;
 
 /* Add Client to WaitingList */
 void WaitingList::add(Client c){
+    _currClients ++;
+    if(_currClients > _maxClients) {
+        _maxClients = _currClients;
+    }
     _clientList.push_back(c);
 }
 
 /* Remove the first waiting Client of the queue and returns it */
 Client WaitingList::removeFirst(){
+    _currClients --;
     Client c = _clientList.front();
     _clientList.pop_front();
     return c;
@@ -40,11 +50,11 @@ int WaitingList::number() {
 // TODO: implement the stat functions
 /* Returns the max length reached by the queue */
 int WaitingList::maxLength() {
-
+    return _maxClients;
 }
 
 /* Returns the number of client waiting in average in the queue */
-int WaitingList::averageLength() {
+double WaitingList::averageLength() {
 
 }
 

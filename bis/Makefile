@@ -4,7 +4,7 @@ UNAME := $(shell uname)
 
 CPP_FILES = $(wildcard *.cpp)
 OBJ = $(CPP_FILES:.cpp=.o)
-CC_FLAGS = -std=c++11
+CC_FLAGS = -std=c++11 -Wall -pedantic
 
 ifeq ($(OS),Windows_NT)
 	LD_FLAGS = -Dsrandom=srand -Drandom=rand

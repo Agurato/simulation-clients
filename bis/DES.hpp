@@ -10,8 +10,10 @@ using namespace std;
 
 class Event;
 
+/* Struct used to compare two events for the set of events */
 struct EventComp {
     bool operator()(const Event* lhs, const Event* rhs) const  {
+        /* Events are compared using their execution time */
         return (lhs->time() < rhs->time());
     }
 };
@@ -22,6 +24,7 @@ protected:
 
     set<Event*, EventComp> _events;
     set<Event*, EventComp>::iterator _eventIterator;
+
 public:
     explicit DES(double);
     virtual ~DES();

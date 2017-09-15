@@ -10,6 +10,8 @@ class Client;
 class WaitingList{
 protected:
     int _number;
+    int _currClients;
+    int _maxClients;
     std::deque<Client> _clientList;
 
 public:
@@ -24,7 +26,7 @@ public:
     int number();
 
     int maxLength();
-    int averageLength();
+    double averageLength();
     double averageWaitingTime();
 };
 
