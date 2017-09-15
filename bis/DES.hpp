@@ -4,16 +4,24 @@
 #include <iostream>
 #include <set>
 
+#include "Event.hpp"
+
 using namespace std;
 
 class Event;
+
+struct EventComp {
+    bool operator()(const Event* lhs, const Event* rhs) const  {
+        return (lhs->time() < rhs->time());
+    }
+};
 
 class DES {
 protected:
     double _time;
 
-    set<Event*> _events;
-    set<Event*>::iterator _eventIterator;
+    set<Event*, EventComp> _events;
+    set<Event*, EventComp>::iterator _eventIterator;
 public:
     explicit DES(double);
     virtual ~DES();

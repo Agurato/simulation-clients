@@ -16,7 +16,7 @@ public:
 
     virtual void process();
     double time() const;
-    bool operator<(const Event&) const;
+//    bool operator<(const Event&) const;
 };
 
 #endif

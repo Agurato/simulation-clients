@@ -6,12 +6,14 @@ Cashier::Cashier() {
     _averageServiceTime = -1;
     _clientNb = 0;
     _currentClient = 0;
+    _bank = 0;
 }
 
-Cashier::Cashier(double averageTime){
+Cashier::Cashier(double averageTime, Bank* b){
     _averageServiceTime = averageTime;
     _clientNb = 0;
     _currentClient = 0;
+    _bank = b;
 }
 
 Cashier::~Cashier() = default;
@@ -19,9 +21,6 @@ Cashier::~Cashier() = default;
 
 double Cashier::averageServiceTime(){
     return _averageServiceTime;
-}
-void Cashier::averageServiceTime(double newTime) {
-    _averageServiceTime = newTime;
 }
 
 int Cashier::clientNb(){
@@ -33,9 +32,11 @@ bool Cashier::isFree() {
 }
 
 void Cashier::serve(Client* c) {
+    _clientNb ++;
     _currentClient = c;
-    cout << "Start serving client arrived at " << c->arrivalTime() << endl;
+    double eventTime = c->arrivalTime()+Poisson::next(_averageServiceTime);
     // Add event to stop serving the client
+    _bank->addEvent(new CashierRelease(eventTime, this, c, _bank));
 }
 
 void Cashier::wait() {

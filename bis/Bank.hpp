@@ -8,6 +8,8 @@
 #include "DES.hpp"
 #include "WaitingList.hpp"
 
+class Cashier;
+
 class Bank: public DES {
 protected:
     double _averageArrivalTime;
@@ -16,9 +18,6 @@ protected:
 
     Cashier* _cashiers;
     WaitingList* _waitingLists;
-
-    // std::set<Event*> _events;
-    // std::set<Event*>::iterator _eventIterator;
 
 public:
     Bank(double, double, int, double, double*);

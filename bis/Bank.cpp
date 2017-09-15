@@ -13,13 +13,13 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
     _cashiers = new Cashier[cashierNb];
     _waitingLists = new WaitingList[cashierNb];
     for(int i=0 ; i<cashierNb ; i++) {
-        _cashiers[i].averageServiceTime(averageServiceTimes[i]);
+        _cashiers[i] = Cashier(averageServiceTimes[i], this);
         cout << "Cashier " << i << ": " << _cashiers[i].averageServiceTime() << endl;
     }
 
     // Create first arrival event
     // Bank *b = new Bank(start, expectedTime, cashierNb, averageArrivalTime, averageServiceTimes);
-    ClientArrival *ca = new ClientArrival(0.1, this);
+    ClientArrival *ca = new ClientArrival(0.11111, this);
     addEvent(ca);
 }
 

@@ -3,20 +3,25 @@
 
 #include <iostream>
 
+#include "Bank.hpp"
+#include "CashierRelease.hpp"
 #include "Client.hpp"
+
+class Bank;
 
 class Cashier{
 protected:
     double _averageServiceTime;
     Client* _currentClient;
     int _clientNb;
+
+    Bank* _bank;
 public:
     Cashier();
-    explicit Cashier(double averageServiceTime);
+    explicit Cashier(double, Bank*);
     ~Cashier();
 
     double averageServiceTime();
-    void averageServiceTime(double);
     int clientNb();
 
     bool isFree();

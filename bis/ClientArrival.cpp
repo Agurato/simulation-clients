@@ -21,9 +21,7 @@ void ClientArrival::process() {
     // Else, have the cashier serve the client
     else {
         cashier->serve(client);
-        double serviceTime = Poisson::next(cashier->averageServiceTime());
-        cout << "Service time: " << serviceTime << endl;
-        double nextTime = _bank->time()+serviceTime;
+        double nextTime = _bank->time()+Poisson::next(cashier->averageServiceTime());
         if(nextTime < _bank->expectedTime()) {
             ClientArrival *ca = new ClientArrival(nextTime, _bank);
             _bank->addEvent(ca);
