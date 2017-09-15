@@ -2,22 +2,23 @@
 
 using namespace std;
 
-Cashier::Cashier() {
+Cashier::Cashier(): _currentClient(Client(-1, 0)) {
+    _number = -1;
     _averageServiceTime = -1;
     _clientNb = 0;
-    _currentClient = 0;
+    _servingClient = false;
     _bank = 0;
 }
 
-Cashier::Cashier(double averageTime, Bank* b){
+Cashier::Cashier(double averageTime, int n, Bank* b): _currentClient(Client(-1, b)) {
+    _number = n;
     _averageServiceTime = averageTime;
     _clientNb = 0;
-    _currentClient = 0;
+    _servingClient = false;
     _bank = b;
 }
 
 Cashier::~Cashier() = default;
-
 
 double Cashier::averageServiceTime(){
     return _averageServiceTime;
@@ -27,20 +28,26 @@ int Cashier::clientNb(){
     return _clientNb;
 }
 
-bool Cashier::isFree() {
-    return (_currentClient == 0);
+int Cashier::number() {
+    return _number;
 }
 
-void Cashier::serve(Client* c) {
+bool Cashier::isFree() {
+    return !_servingClient;
+}
+
+void Cashier::serve(Client c) {
     _clientNb ++;
+    _servingClient = true;
     _currentClient = c;
-    double eventTime = c->arrivalTime()+Poisson::next(_averageServiceTime);
+    double eventTime = c.arrivalTime()+Poisson::next(_averageServiceTime);
     // Add event to stop serving the client
-    _bank->addEvent(new CashierRelease(eventTime, this, c, _bank));
+    _bank->addEvent(new CashierRelease(eventTime, this, _number, c, _bank));
 }
 
 void Cashier::wait() {
-
+    _servingClient = false;
+    _currentClient = Client(-1, 0);
 }
 
 double Cashier::occupationRate() {

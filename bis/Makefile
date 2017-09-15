@@ -1,9 +1,16 @@
 #Makefile
 
+UNAME := $(shell uname)
+
 CPP_FILES = $(wildcard *.cpp)
 OBJ = $(CPP_FILES:.cpp=.o)
 CC_FLAGS = -std=c++11
-LD_FLAGS = -Dsrandom=srand -Drandom=rand
+
+ifeq ($(OS),Windows_NT)
+	LD_FLAGS = -Dsrandom=srand -Drandom=rand
+else
+	LD_FLAGS = 
+endif
 
 all: simulation
 

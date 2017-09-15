@@ -1,6 +1,10 @@
 #include "WaitingList.hpp"
 
-WaitingList::WaitingList() = default;
+WaitingList::WaitingList() {
+    _number = -1;
+}
+
+WaitingList::WaitingList(int n): _number(n) {}
 
 WaitingList::~WaitingList() = default;
 
@@ -20,6 +24,10 @@ bool WaitingList::isEmpty(){
 
 int WaitingList::size() {
     return _clientList.size();
+}
+
+int WaitingList::number() {
+    return _number;
 }
 
 int WaitingList::maxLength() {

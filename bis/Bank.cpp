@@ -13,7 +13,8 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
     _cashiers = new Cashier[cashierNb];
     _waitingLists = new WaitingList[cashierNb];
     for(int i=0 ; i<cashierNb ; i++) {
-        _cashiers[i] = Cashier(averageServiceTimes[i], this);
+        _waitingLists[i] = WaitingList(i);
+        _cashiers[i] = Cashier(averageServiceTimes[i], i, this);
         cout << "Cashier " << i << ": " << _cashiers[i].averageServiceTime() << endl;
     }
 
@@ -32,7 +33,7 @@ void Bank::run() {
     for(_eventIterator = _events.begin() ; (_eventIterator != _events.end()) && (_time < _expectedTime) ; ++_eventIterator) {
         Event *e = *_eventIterator;
         _time = e->time();
-        cout << _time << ":\t";
+        cout << _time << ":  \t";
         e->process();
     }
 }
@@ -57,6 +58,10 @@ Cashier* Bank::freeCashier() {
     }
 
     return 0;
+}
+
+WaitingList* Bank::waitingLists() {
+    return _waitingLists;
 }
 
 WaitingList* Bank::shortestQueue() {

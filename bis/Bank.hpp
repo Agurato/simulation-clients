@@ -30,6 +30,7 @@ public:
     int cashierNb();
 
     Cashier* freeCashier();
+    WaitingList* waitingLists();
     WaitingList* shortestQueue();
 
     double realDuration();
