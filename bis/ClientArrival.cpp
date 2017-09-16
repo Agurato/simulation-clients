@@ -23,7 +23,7 @@ void ClientArrival::process() {
     // Else, have the cashier serve the client
     else {
         // For stats at the end of the simulation
-        _bank->addServiceTime(0);
+        _bank->addWaitingTime(0);
 
         cout << "New client served by " << cashier->number() << endl;
         cashier->serve(client); 

@@ -16,6 +16,7 @@ protected:
     Client _currentClient;
     bool _servingClient;
     int _clientNb;
+    double _occupationTime;
 
     Bank* _bank;
 public:

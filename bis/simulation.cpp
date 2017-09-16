@@ -6,7 +6,7 @@ int main() {
     // Simulation parameters definitions
     double expectedTime = 1000;
     int cashierNb = 3;
-    double averageArrivalTime = 4;
+    double averageArrivalTime = 5;
     double* averageServiceTimes = new double[cashierNb];
 
     // Init seed for Poisson random generator

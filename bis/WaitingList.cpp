@@ -77,8 +77,3 @@ double WaitingList::averageLength() {
     addToAverage();
     return _timeClientSum / _bank->time();
 }
-
-/* Returns the average waiting time for clients in the queue */
-double WaitingList::averageWaitingTime() {
-
-}

@@ -20,6 +20,10 @@ void CashierRelease::process() {
         cout << "Cashier " << _cashier->number() << " serves next client" << endl;
         // Take 1st client waiting in the right queue
         Client c = _bank->waitingLists()[_number].removeFirst();
+
+        // Stats
+        _bank->addWaitingTime(_bank->time() - c.arrivalTime());
+
         // Have the cashier serve him
         _cashier->serve(c);
     }

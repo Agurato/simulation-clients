@@ -7,6 +7,7 @@ Cashier::Cashier(): _currentClient(Client(-1, nullptr)) {
     _averageServiceTime = -1;
     _clientNb = 0;
     _servingClient = false;
+    _occupationTime = 0;
     _bank = nullptr;
 }
 
@@ -15,6 +16,7 @@ Cashier::Cashier(double averageTime, int n, Bank* b): _currentClient(Client(-1, 
     _averageServiceTime = averageTime;
     _clientNb = 0;
     _servingClient = false;
+    _occupationTime = 0;
     _bank = b;
 }
 
@@ -43,8 +45,9 @@ void Cashier::serve(Client c) {
     double duration = Poisson::next(_averageServiceTime);
     double eventTime = _bank->time()+duration;
 
-    // Add to stat variable in Bank
-    _bank->addServiceTime(duration);
+    // For stats
+//    _bank->addWaitingTime(duration);
+    _occupationTime += duration;
 
     // Add event to stop serving the client
     _bank->addEvent(new CashierRelease(eventTime, this, _number, c, _bank));
@@ -56,5 +59,5 @@ void Cashier::wait() {
 }
 
 double Cashier::occupationRate() {
-    return -1;
+    return (_occupationTime/_bank->time());
 }

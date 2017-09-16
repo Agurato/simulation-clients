@@ -37,7 +37,6 @@ public:
 
     int maxLength();
     double averageLength();
-    double averageWaitingTime();
 };
 
 #endif

@@ -23,7 +23,7 @@ protected:
     WaitingList* _waitingLists;
 
     // Variable used to get stats about the simulation
-    std::vector<double> _serviceTimes;
+    std::vector<double> _waitingTimes;
 
 public:
     Bank(double, double, int, double, double*);
@@ -39,7 +39,7 @@ public:
     WaitingList* waitingLists();
     WaitingList* shortestQueue();
 
-    void addServiceTime(double);
+    void addWaitingTime(double);
     double realDuration();
 
     void displayStats();
