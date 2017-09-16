@@ -4,9 +4,9 @@ using namespace std;
 
 int main() {
     // Simulation parameters definitions
-    double expectedTime = 700;
+    double expectedTime = 1000;
     int cashierNb = 3;
-    double averageArrivalTime = 8;
+    double averageArrivalTime = 4;
     double* averageServiceTimes = new double[cashierNb];
 
     // Init seed for Poisson random generator
@@ -21,7 +21,7 @@ int main() {
     bank.run();
 
     // Display the stats for the simulation
-    displayStats(bank);
+    bank.displayStats();
 }
 
 /* Generate random doubles between min and max in an array */
@@ -32,9 +32,4 @@ void genRandomDoubles(double min, double max, double** arr, int arrSize) {
     for(int i=0 ; i<arrSize ; i++) {
         *(*arr+i) = unif(re);
     }
-}
-
-/* Displays stats for the simulation */
-void displayStats(Bank bank) {
-    cout << bank.cashierNb() << endl;
 }

@@ -2,12 +2,12 @@
 
 using namespace std;
 
-Cashier::Cashier(): _currentClient(Client(-1, 0)) {
+Cashier::Cashier(): _currentClient(Client(-1, nullptr)) {
     _number = -1;
     _averageServiceTime = -1;
     _clientNb = 0;
     _servingClient = false;
-    _bank = 0;
+    _bank = nullptr;
 }
 
 Cashier::Cashier(double averageTime, int n, Bank* b): _currentClient(Client(-1, b)) {
@@ -40,14 +40,19 @@ void Cashier::serve(Client c) {
     _clientNb ++;
     _servingClient = true;
     _currentClient = c;
-    double eventTime = _bank->time()+Poisson::next(_averageServiceTime);
+    double duration = Poisson::next(_averageServiceTime);
+    double eventTime = _bank->time()+duration;
+
+    // Add to stat variable in Bank
+    _bank->addServiceTime(duration);
+
     // Add event to stop serving the client
     _bank->addEvent(new CashierRelease(eventTime, this, _number, c, _bank));
 }
 
 void Cashier::wait() {
     _servingClient = false;
-    _currentClient = Client(-1, 0);
+    _currentClient = Client(-1, nullptr);
 }
 
 double Cashier::occupationRate() {

@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <deque>
+
+#include "Bank.hpp"
 #include "Client.hpp"
 
 class Client;
@@ -12,11 +14,19 @@ protected:
     int _number;
     int _currClients;
     int _maxClients;
+
+    double _lastModifTime;
+    double _timeClientSum;
+
+    Bank* _bank;
+
     std::deque<Client> _clientList;
+
+    void addToAverage();
 
 public:
     WaitingList();
-    explicit WaitingList(int);
+    explicit WaitingList(int, Bank*);
     ~WaitingList();
 
     void add(Client);

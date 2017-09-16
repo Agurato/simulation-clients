@@ -15,13 +15,16 @@ void ClientArrival::process() {
 
     Cashier* cashier = _bank->freeCashier();
     // If there isn't any free cashier, add client to the sortest queue
-    if(cashier == 0) {
+    if(cashier == nullptr) {
         WaitingList* wl = _bank->shortestQueue();
         wl->add(client);
         cout << "New client waits at line " << wl->number() << endl;
     }
     // Else, have the cashier serve the client
     else {
+        // For stats at the end of the simulation
+        _bank->addServiceTime(0);
+
         cout << "New client served by " << cashier->number() << endl;
         cashier->serve(client); 
     }

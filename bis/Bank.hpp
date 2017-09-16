@@ -1,7 +1,9 @@
 #ifndef __BANK_HPP
 #define __BANK_HPP
 
+#include <iostream>
 #include <set>
+#include <vector>
 
 #include "Cashier.hpp"
 #include "ClientArrival.hpp"
@@ -9,6 +11,7 @@
 #include "WaitingList.hpp"
 
 class Cashier;
+class WaitingList;
 
 class Bank: public DES {
 protected:
@@ -18,6 +21,9 @@ protected:
 
     Cashier* _cashiers;
     WaitingList* _waitingLists;
+
+    // Variable used to get stats about the simulation
+    std::vector<double> _serviceTimes;
 
 public:
     Bank(double, double, int, double, double*);
@@ -33,7 +39,10 @@ public:
     WaitingList* waitingLists();
     WaitingList* shortestQueue();
 
+    void addServiceTime(double);
     double realDuration();
+
+    void displayStats();
 };
 
 #endif

@@ -14,7 +14,7 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
     _cashiers = new Cashier[cashierNb];
     _waitingLists = new WaitingList[cashierNb];
     for(int i=0 ; i<cashierNb ; i++) {
-        _waitingLists[i] = WaitingList(i);
+        _waitingLists[i] = WaitingList(i, this);
         _cashiers[i] = Cashier(averageServiceTimes[i], i, this);
         cout << "Cashier " << i << ": " << _cashiers[i].averageServiceTime() << endl;
     }
@@ -67,7 +67,7 @@ Cashier* Bank::freeCashier() {
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 /* Returns the waiting lists */
@@ -92,7 +92,56 @@ WaitingList* Bank::shortestQueue() {
     return &(_waitingLists[minIndex]);
 }
 
+void Bank::addServiceTime(double t) {
+    _serviceTimes.push_back(t);
+}
+
 /* Returns the real duration of the simuation */
 double Bank::realDuration() {
     return _time;
+}
+
+void Bank::displayStats() {
+    cout << "=============\nResultats de la simulation:" << endl << endl;
+
+    // Simulation stats
+    cout << "La simulation avait un duree prevue de " << _expectedTime << ", mais a dure " << _time << endl << endl;
+
+    // Cashier stats
+    cout << _cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
+    for(int i=0 ; i<_cashierNb ; i++) {
+        cout << _cashiers[i].averageServiceTime() << " ";
+    }
+    cout << "] (pour chaque caissier)" << endl << endl;
+
+    // Client stats
+    cout << "Les clients arrivent en moyenne toutes les " << _averageArrivalTime << " unites de temps" << endl << endl;
+
+    cout << "Les clients ont attendu en moyenne ";
+    double sum = 0;
+    for (vector<double>::iterator it = _serviceTimes.begin() ; it != _serviceTimes.end(); ++it) {
+        sum += *it;
+    }
+    cout << (sum/_serviceTimes.size()) << " unites de temps" << endl << endl;
+
+    // Queue stats
+    cout << "Les files ont atteint une taille maximale de [ ";
+    int max = _waitingLists[0].maxLength();
+    for(int i=0 ; i<_cashierNb ; i++) {
+        cout << _waitingLists[i].maxLength() << " ";
+        if(_waitingLists[i].maxLength() > max) {
+            max = _waitingLists[i].maxLength();
+        }
+    }
+    cout << "] clients (pour chaque file)" << endl;
+    cout << "Soit un maximum de " << max << " clients, toutes files confondues" << endl << endl;
+
+    cout << "Les files ont eu une moyenne de [ ";
+    sum = 0;
+    for(int i=0 ; i<_cashierNb ; i++) {
+        cout << _waitingLists[i].averageLength() << " ";
+        sum += _waitingLists[i].averageLength();
+    }
+    cout << "] clients (pour chaque file)" << endl;
+    cout << "Soit un moyenne de " << (sum/_cashierNb) << " clients, toutes files confondues" << endl << endl;
 }
