@@ -110,7 +110,9 @@ double Bank::realDuration() {
 void Bank::displayStats() {
     cout << "=============\nResultats de la simulation:" << endl << endl;
 
-    cout << "PARAMETRES D'ENTREE:\n" << _cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
+    cout << "PARAMETRES D'ENTREE:" << endl;
+    cout << "La simulation a une duree prevue de " << _expectedTime << endl;
+    cout << _cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
     for(int i=0 ; i<_cashierNb ; i++) {
         cout << _cashiers[i].averageServiceTime() << " ";
     }
@@ -119,7 +121,7 @@ void Bank::displayStats() {
 
     // Simulation stats
     cout << "RESULTATS EN SORTIE:" << endl;
-    cout << "La simulation avait un duree prevue de " << _expectedTime << ", mais a dure " << _time << endl << endl;
+    cout << "La simulation a reellement dure " << _time << endl << endl;
 
     // Cashier stats
     cout << "Les caissiers ont ete occupes [ ";
