@@ -22,7 +22,6 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
     for(int i=0 ; i<cashierNb ; i++) {
         _waitingLists[i] = WaitingList(i, this);
         _cashiers[i] = Cashier(averageServiceTimes[i], i, this);
-        cout << "Cashier " << i << ": " << _cashiers[i].averageServiceTime() << endl;
     }
 
     // Create first arrival event
