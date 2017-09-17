@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel
+ *
+ *********************************/
+
 #include "Cashier.hpp"
 
 using namespace std;

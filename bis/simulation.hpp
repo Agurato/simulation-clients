@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel et Vincent Monot
+ *
+ *********************************/
+
 #ifndef __SIMULATION_HPP
 #define __SIMULATION_HPP
 

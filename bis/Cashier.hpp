@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel
+ *
+ *********************************/
+
 #ifndef __CASHIER_HPP
 #define __CASHIER_HPP
 

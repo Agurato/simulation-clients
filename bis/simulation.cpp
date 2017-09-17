@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel et Vincent Monot
+ *
+ *********************************/
+
 #include "simulation.hpp"
 
 using namespace std;
@@ -12,7 +18,7 @@ int main() {
     // Init seed for Poisson random generator
     Poisson::init();
 
-    // Generate random doubles to set the average service times for cashiers
+    // Generate random doubles to set the average service times for each cashier
     genRandomDoubles(15, 15, &averageServiceTimes, cashierNb);
 
     // Create bank with parameters

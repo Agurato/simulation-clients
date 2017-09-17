@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Vincent Monot
+ *
+ *********************************/
+
 #include "ClientArrival.hpp"
 
 using namespace std;

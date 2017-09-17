@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Vincent Monot
+ *
+ *********************************/
+
 #include "Event.hpp"
 
 #include <iostream>

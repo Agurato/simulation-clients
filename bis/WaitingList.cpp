@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel et Vincent Monot
+ *
+ *********************************/
+
 #include "WaitingList.hpp"
 
 /* Constructor with no params for the init of the array in Bank */

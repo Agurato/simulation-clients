@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Vincent Monot
+ *
+ *********************************/
+
 #include "CashierRelease.hpp"
 
 using namespace std;

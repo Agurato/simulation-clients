@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel et Vincent Monot
+ *
+ *********************************/
+
 #ifndef __WAITINGLIST_HPP
 #define __WAITINGLIST_HPP
 

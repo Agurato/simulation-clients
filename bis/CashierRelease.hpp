@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Vincent Monot
+ *
+ *********************************/
+
 #ifndef __CASHIER_RELEASE_HPP
 #define __CASHIER_RELEASE_HPP
 

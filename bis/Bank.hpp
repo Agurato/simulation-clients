@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel et Vincent Monot
+ *
+ *********************************/
+
 #ifndef __BANK_HPP
 #define __BANK_HPP
 

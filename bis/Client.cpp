@@ -1,3 +1,9 @@
+/*********************************
+ *
+ * Renaud Déniel
+ *
+ *********************************/
+
 #include "Client.hpp"
 
 /* Constructor with parameters:
